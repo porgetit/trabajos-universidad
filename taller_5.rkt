@@ -167,5 +167,3 @@
 ; (principal-3)
 
 ;Programa 4:
-(define (sumar x y) (+ x y))
-(display (sumar 2 3))(newline)
