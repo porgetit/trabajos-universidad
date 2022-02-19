@@ -1,3 +1,4 @@
+#lang racket
 ; ;Programa 1: Haga funciones en DrRacket que calculen lo siguiente:
 ; ;1.Volúmen de un cilíndro
 ; ;2.Volúmen de una esfera
@@ -16,59 +17,59 @@
 ; (define (xCuadrado x) (* x x))
 ; (define (xCubo x) (* (* x x) x))
 ; (define (raiz x) (sqrt x))
-; 
+;
 ; ;1.Volúmen de un cilindro = pi*r^2*h
 ; ;###################################
 ; (define (volumen-cilindro radio altura)
 ;   (multiplicar (multiplicar pi (xCuadrado radio)) altura)
 ;   )
 ; ; (volumen-cilindro 4 2) ;100.53096491487338
-; 
-; 
+;
+;
 ; ;2.Volúmen de una esfera = 4/3*pi*r^3
 ; ;####################################
 ; (define (volumen-esfera radio)
 ;   (multiplicar (multiplicar (dividir 4 3) pi) (xCubo radio))
 ;   )
 ; ; (volumen-esfera 1) ;4.1887902047863905
-; 
-; 
+;
+;
 ; ;3.Volúmen de un cono = 1/3*pi*r^2*h
 ; ;###################################
 ; (define (volumen-cono radio altura)
 ;   (multiplicar (multiplicar (dividir 1 3) pi) (multiplicar (xCuadrado radio) altura))
 ;   )
 ; ; (volumen-cono 4 8) ;134.0412865531645
-; 
-; 
+;
+;
 ; ;4.Volúmen de un cono truma = pi*(R^2+r^2+R*r)*(h/3)
 ; ;###################################################
 ; (define (volumen-cono-truma radio-mayor radio-menor altura)
 ;   (multiplicar (multiplicar pi (sumar (sumar (xCuadrado radio-mayor) (xCuadrado radio-menor)) (multiplicar radio-mayor radio-menor))) (dividir altura 3))
 ;   )
 ; ; (volumen-cono-truma 4 8 12) ;1407.4335088082273
-; 
+;
 ; ;5.Farenheit a Celcius = (F-32)*(5/9)
 ; ;####################################
 ; (define (farenheit->celcius F)
 ;   (multiplicar (restar F 32) (dividir 5 9))
 ;   )
 ; ; (farenheit->celcius 32) ;0
-; 
+;
 ; ;6.Distancia entre dos puntos = sqrt((x2-x1)^2 * (y2-y1)^2)
 ; ;##########################################################
 ; (define (distancia-dos-puntos x1 y1 x2 y2)
 ;   (raiz (multiplicar (xCuadrado (restar x2 x1)) (xCuadrado (restar y2 y1))))
 ;   )
 ; ; (distancia-dos-puntos 0 0 3 3) ;9
-; 
+;
 ; ;7.Pendiente de un recta = (y2-y1)/(x2-x1)
 ; ;#########################################
 ; (define (pendiente-recta x1 y1 x2 y2)
 ;   (dividir (restar y2 y1) (restar x2 x1))
 ;   )
 ; ; (pendiente-recta 0 0 3 0) ;0
-; 
+;
 
 ; ;Programa 2: Realizar funciones que me premitan la conversión de temperatura a grados Celsius, Farenheit y kelvin (6 funciones con argumentos)
 ; ;funciones auxiliares
@@ -165,4 +166,6 @@
 ;   )
 ; (principal-3)
 
-;Programa 4: 
+;Programa 4:
+(define (sumar x y) (+ x y))
+(display (sumar 2 3))(newline)
