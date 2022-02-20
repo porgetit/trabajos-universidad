@@ -166,4 +166,27 @@
 ;   )
 ; (principal-3)
 
-;Programa 4:
+;Programa 4:Teatro
+;funciones auxiliares
+; (define (sumar x y) (+ x y))
+; (define (restar x y) (- x y))
+; (define (multiplicar x y) (* x y))
+; (define (dividir x y) (/ x y))
+; (define (ganancias clientes)
+;   (define entradas (multiplicar clientes 10000)) ;cada cliente paga 10.000
+;   (define atencion 300000) ;una función le cuesta 300.000 al teatro
+;   (define aseo (multiplicar clientes 2000)) ;el teatro paga 2.000 de aseo por cliente
+;   (restar entradas (sumar atencion aseo)) ;entradas - (atencion + aseo)
+;   )
+
+; ;función principal
+; (define (principal-4)
+;   (begin
+;     (display "Ingrese el número de clientes de la función: ")
+;     (define n-clientes (read))
+;     (display "Las ganancias totales del teatro son: ")
+;     (display (ganancias n-clientes))
+;     (newline)
+;     )
+;   )
+; (principal-4)
