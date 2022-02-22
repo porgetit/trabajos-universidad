@@ -1,0 +1,192 @@
+#lang racket
+; ;Programa 1: Haga funciones en DrRacket que calculen lo siguiente:
+; ;1.Volúmen de un cilíndro
+; ;2.Volúmen de una esfera
+; ;3.Volúmen de un cono
+; ;4.Volúmen de un cono truma
+; ;5.Conversión de grados Fahrenheit a Celcius
+; ;6.Distancia entre dos puntos
+; ;7.Pundiente de una recta
+; ;----------------------------------------------------------------
+; ;definición de funciones auxiliares generales
+; ;##################################
+; (define (sumar x y) (+ x y))
+; (define (restar x y) (- x y))
+; (define (multiplicar x y) (* x y))
+; (define (dividir x y) (/ x y))
+; (define (xCuadrado x) (* x x))
+; (define (xCubo x) (* (* x x) x))
+; (define (raiz x) (sqrt x))
+;
+; ;1.Volúmen de un cilindro = pi*r^2*h
+; ;###################################
+; (define (volumen-cilindro radio altura)
+;   (multiplicar (multiplicar pi (xCuadrado radio)) altura)
+;   )
+; ; (volumen-cilindro 4 2) ;100.53096491487338
+;
+;
+; ;2.Volúmen de una esfera = 4/3*pi*r^3
+; ;####################################
+; (define (volumen-esfera radio)
+;   (multiplicar (multiplicar (dividir 4 3) pi) (xCubo radio))
+;   )
+; ; (volumen-esfera 1) ;4.1887902047863905
+;
+;
+; ;3.Volúmen de un cono = 1/3*pi*r^2*h
+; ;###################################
+; (define (volumen-cono radio altura)
+;   (multiplicar (multiplicar (dividir 1 3) pi) (multiplicar (xCuadrado radio) altura))
+;   )
+; ; (volumen-cono 4 8) ;134.0412865531645
+;
+;
+; ;4.Volúmen de un cono truma = pi*(R^2+r^2+R*r)*(h/3)
+; ;###################################################
+; (define (volumen-cono-truma radio-mayor radio-menor altura)
+;   (multiplicar (multiplicar pi (sumar (sumar (xCuadrado radio-mayor) (xCuadrado radio-menor)) (multiplicar radio-mayor radio-menor))) (dividir altura 3))
+;   )
+; ; (volumen-cono-truma 4 8 12) ;1407.4335088082273
+;
+; ;5.Farenheit a Celcius = (F-32)*(5/9)
+; ;####################################
+; (define (farenheit->celcius F)
+;   (multiplicar (restar F 32) (dividir 5 9))
+;   )
+; ; (farenheit->celcius 32) ;0
+;
+; ;6.Distancia entre dos puntos = sqrt((x2-x1)^2 * (y2-y1)^2)
+; ;##########################################################
+; (define (distancia-dos-puntos x1 y1 x2 y2)
+;   (raiz (multiplicar (xCuadrado (restar x2 x1)) (xCuadrado (restar y2 y1))))
+;   )
+; ; (distancia-dos-puntos 0 0 3 3) ;9
+;
+; ;7.Pendiente de un recta = (y2-y1)/(x2-x1)
+; ;#########################################
+; (define (pendiente-recta x1 y1 x2 y2)
+;   (dividir (restar y2 y1) (restar x2 x1))
+;   )
+; ; (pendiente-recta 0 0 3 0) ;0
+;
+
+; ;Programa 2: Realizar funciones que me premitan la conversión de temperatura a grados Celsius, Farenheit y kelvin (6 funciones con argumentos)
+; ;funciones auxiliares
+; (define (sumar x y)
+;   (+ x y)
+;   )
+; (define (restar x y)
+;   (- x y)
+;   )
+; (define (multiplicar x y)
+;   (* x y)
+;   )
+; (define (dividir x y)
+;   (/ x y)
+;   )
+; ;Celsius a Farenheit
+; (define (c->F C)
+;   (sumar (multiplicar (dividir 9 5) C) 32)
+;   )
+; (c->F 1) ;33 4/5
+; ;Celsius a kelvin
+; (define (c->k C)
+;   (sumar C 273.15)
+;   )
+; (c->k 1) ;274.15
+; ;Farenheit a Celsius
+; (define (f->C F)
+;   (multiplicar (dividir 5 9) (restar F 32))
+;   )
+; (f->C 1) ;-17 2/9
+; ;Farenheit a kelvin
+; (define (f->k F)
+;   (multiplicar (dividir 5 9) (sumar F 459.67))
+;   )
+; (f->k 1) ;255.9277777777778
+; ;kelvin a Celsius
+; (define (k->C K)
+;   (restar K 273.15)
+;   )
+; (k->C 1) ;-272.15
+; ;kelvin a Farenheit
+; (define (k->F K)
+;   (sumar (multiplicar (k->C K) (dividir 9 5)) 32)
+;   )
+; (k->F 1) ;-457.86999999999995
+
+; ;Programa 3: "El Ahorrito"
+; ;funciones auxiliares
+; (define (multiplicar x y)
+;   (* x y)
+;   )
+; (define (suma-monedas-20 monedas-20)
+;   (multiplicar monedas-20 20)
+;   )
+; (define (suma-monedas-50 monedas-50)
+;   (multiplicar monedas-50 50)
+;   )
+; (define (suma-monedas-100 monedas-100)
+;   (multiplicar monedas-100 100)
+;   )
+; (define (suma-monedas-200 monedas-200)
+;   (multiplicar monedas-200 200)
+;   )
+; (define (suma-monedas-500 monedas-500)
+;   (multiplicar monedas-500 500)
+;   )
+; (define (suma-total m1 m2 m3 m4 m5)
+;   (+ m1 m2 m3 m4 m5)
+;   )
+; ;función principal
+; (define (principal-3)
+;   (begin
+;     (display "Ingrese la cantidad de monedas de 20: ")
+;     (define monedas-20 (read))
+;     (display "Ingrese la cantidad de monedas de 50: ")
+;     (define monedas-50 (read))
+;     (display "Ingrese la cantidad de monedas de 100: ")
+;     (define monedas-100 (read))
+;     (display "Ingrese la cantidad de monedas de 200: ")
+;     (define monedas-200 (read))
+;     (display "Ingrese la cantidad de monedas de 500: ")
+;     (define monedas-500 (read))
+;     (display "En la bolsa hay $")
+;     (display
+;      (suma-total
+;       (suma-monedas-20 monedas-20)
+;       (suma-monedas-50 monedas-50)
+;       (suma-monedas-100 monedas-100)
+;       (suma-monedas-200 monedas-200)
+;       (suma-monedas-500 monedas-500)
+;       )
+;      )
+;     )
+;   )
+; (principal-3)
+
+;Programa 4:Teatro
+;funciones auxiliares
+; (define (sumar x y) (+ x y))
+; (define (restar x y) (- x y))
+; (define (multiplicar x y) (* x y))
+; (define (dividir x y) (/ x y))
+; (define (ganancias clientes)
+;   (define entradas (multiplicar clientes 10000)) ;cada cliente paga 10.000
+;   (define atencion 300000) ;una función le cuesta 300.000 al teatro
+;   (define aseo (multiplicar clientes 2000)) ;el teatro paga 2.000 de aseo por cliente
+;   (restar entradas (sumar atencion aseo)) ;entradas - (atencion + aseo)
+;   )
+
+; ;función principal
+; (define (principal-4)
+;   (begin
+;     (display "Ingrese el número de clientes de la función: ")
+;     (define n-clientes (read))
+;     (display "Las ganancias totales del teatro son: ")
+;     (display (ganancias n-clientes))
+;     (newline)
+;     )
+;   )
+; (principal-4)
