@@ -1,0 +1,294 @@
+#lang racket
+;de 1 a 999 recibe un numero e imprime en texto
+(define (centenas numero)
+  (define x (remainder numero 1000))
+  (floor (/ x 100))
+  )
+(define (decenas numero)
+  (define x (remainder numero 1000))
+  (define y (remainder x 100))
+  (floor (/ y 10))
+  )
+(define (unidades numero)
+  (define x (remainder numero 1000))
+  (define y (remainder x 100))
+  (remainder y 10)
+  )
+(define (ver.centenas centenas)
+  (if (= centenas 0)
+      (begin
+        ""
+        )
+      (begin
+        (if (= centenas 1)
+            (begin
+              "Cien"
+              )
+            (begin
+              (if (= centenas 2)
+                  (begin
+                    "Doscientos"
+                    )
+                  (begin
+                    (if (= centenas 3)
+                        (begin
+                          "Trescientos"
+                          )
+                        (begin
+                          (if (= centenas 4)
+                              (begin
+                                "Cuatrocientos"
+                                )
+                              (begin
+                                (if (= centenas 5)
+                                    (begin
+                                      "Quinientos"
+                                      )
+                                    (begin
+                                      (if (= centenas 6)
+                                          (begin
+                                            "Seiscientos"
+                                            )
+                                          (begin
+                                            (if (= centenas 7)
+                                                (begin
+                                                  "Setecientos"
+                                                  )
+                                                (begin
+                                                  (if (= centenas 8)
+                                                      (begin
+                                                        "Ochocientos"
+                                                        )
+                                                      (begin
+                                                        (if (= centenas 9)
+                                                            (begin
+                                                              "Novecientos"
+                                                              )
+                                                            (begin
+                                                              "No está en el rango"
+                                                              )
+                                                            )
+                                                        )
+                                                      )
+                                                  )
+                                                )
+                                            )
+                                          )
+                                      )
+                                    )
+                                )
+                              )
+                          )
+                        )
+                    )
+                  )
+              )
+            )
+        )
+      )
+  )
+(define (ver.decenas decenas)
+  (if (= decenas 1)
+      (begin
+        "Diez"
+        )
+      (begin
+        (if (= decenas 2)
+            (begin
+              "Veinte"
+              )
+            (begin
+              (if (= decenas 3)
+                  (begin
+                    "Treinta"
+                    )
+                  (begin
+                    (if (= decenas 4)
+                        (begin
+                          "Cuarenta"
+                          )
+                        (begin
+                          (if (= decenas 5)
+                              (begin
+                                "Cincuenta"
+                                )
+                              (begin
+                                (if (= decenas 6)
+                                    (begin
+                                      "Secenta"
+                                      )
+                                    (begin
+                                      (if (= decenas 7)
+                                          (begin
+                                            "Setenta"
+                                            )
+                                          (begin
+                                            (if (= decenas 8)
+                                                (begin
+                                                  "Ochenta"
+                                                  )
+                                                (begin
+                                                  (if (= decenas 9)
+                                                      (begin
+                                                        "Noventa"
+                                                        )
+                                                      (begin
+                                                        "Decenas fuera de rango"
+                                                        )
+                                                      )
+                                                  )
+                                                )
+                                            )
+                                          )
+                                      )
+                                    )
+                                )
+                              )
+                          )
+                        )
+                    )
+                  )
+              )
+            )
+        )
+      )
+  )
+(define (ver.unidades unidades)
+  (if (= unidades 1)
+      (begin
+        "Uno"
+        )
+      (begin
+        (if (= unidades 2)
+            (begin
+              "Dos"
+              )
+            (begin
+              (if (= unidades 3)
+                  (begin
+                    "Tres"
+                    )
+                  (begin
+                    (if (= unidades 4)
+                        (begin
+                          "Cuatro"
+                          )
+                        (begin
+                          (if (= unidades 5)
+                              (begin
+                                "Cinco"
+                                )
+                              (begin
+                                (if (= unidades 6)
+                                    (begin
+                                      "Seis"
+                                      )
+                                    (begin
+                                      (if (= unidades 7)
+                                          (begin
+                                            "Siete"
+                                            )
+                                          (begin
+                                            (if (= unidades 8)
+                                                (begin
+                                                  "Ocho"
+                                                  )
+                                                (begin
+                                                  (if (= unidades 9)
+                                                      (begin
+                                                        "Nueve"
+                                                        )
+                                                      (begin
+                                                        "Unidades fuera de rango"
+                                                        )
+                                                      )
+                                                  )
+                                                )
+                                            )
+                                          )
+                                      )
+                                    )
+                                )
+                              )
+                          )
+                        )
+                    )
+                  )
+              )
+            )
+        )
+      )
+  )
+(define (casos.especiales centenas decenas unidades numero)
+  (if (eq? decenas "Diez")
+      (begin
+        (if (eq? unidades "Uno")
+            (begin
+              "Once"
+              )
+            (begin
+              (if (eq? unidades "Dos")
+                  (begin
+                    "Doce"
+                    )
+                  (begin
+                    (if (eq? unidades "Tres")
+                        (begin
+                          "Trece"
+                          )
+                        (begin
+                          (if (eq? unidades "Cuatro")
+                              (begin
+                                "Catorce"
+                                )
+                              (begin
+                                (if (eq? unidades "Cinco")
+                                    (begin
+                                      "Quince"
+                                      )
+                                    (begin
+                                      "Else del quince"
+                                      )
+                                    )
+                                )
+                              )
+                          )
+                        )
+                    )
+                  )
+              )
+            )
+        )
+      (begin
+        (begin
+          (display (ver.centenas (centenas numero)))(display " ")
+          (display (ver.decenas (decenas numero)))(display " y ")
+          (display (ver.unidades (unidades numero)))(newline)
+          )
+        )
+      )
+
+  )
+(define (principal)
+  (begin
+    (display "Ingrese un número de 1 a 999: ")
+    (define numero (read))
+    ; (display (centenas numero))(newline)
+    ; (display (decenas numero))(newline)
+    ; (display (unidades numero))
+    (display (ver.centenas (centenas numero)))(display " ")
+    (display (ver.decenas (decenas numero)))(display " ")
+    (display (ver.unidades (unidades numero)))(newline)
+    (display (casos.especiales (ver.centenas (centenas numero)) (ver.decenas (decenas numero)) (ver.unidades (unidades numero) numero)))
+    )
+  )
+(principal)
+
+#|
+    · Descomponemos el número recibido --
+    · Verificamos centenas --
+    · Verificamos decenas --
+    · Verificamos unidades --
+    · Imprimimos los datos
+    · Verificamos los casos especiales
+|#
