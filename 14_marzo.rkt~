@@ -146,15 +146,27 @@
     )
   )
 
+(define (menor.tres.repetidos primer_menor b c d)
+  "menor.tres.repetidos"
+  )
+
 (define (impares.orden.menor->mayor.repetidos a b c d)
-  (define data (list a b c d))
-  (define data.to.pass (sort data <))
-  (quitar.pares
-   (list-ref data.to.pass 0)
-   (list-ref data.to.pass 1)
-   (list-ref data.to.pass 2)
-   (list-ref data.to.pass 3)
-   )
+  (display "Hay datos repetidos")
+  (cond
+    ((or (= a b) (= a c) (= a d)) (menor.tres.repetidos a b c d))
+
+    ((= b a))
+    ((= b c))
+    ((= c d))
+
+    ((= c a))
+    ((= c b))
+    ((= c d))
+
+    ((= d a))
+    ((= d b))
+    ((= d c))
+    )
   )
 
 (define (pares? miles centenas decenas unidades)
@@ -187,22 +199,4 @@
     (descomponer numero)
     )
   )
-
-;(define (principal numero)
-;  (begin
-;    ;(display "Ingrese un número de 4 cifras: ")
-;    ;(define numero (read))
-;    (descomponer numero)
-;    )
-;  )
-;;(principal)
-;
-;
-;(define a 0)
-;(define data (build-list 10000 values))
-;(for ([i data])
-;  (begin
-;    (display i )(display " -> ")
-;    (displayln (principal i))    
-;    )
-;  )
+(principal)
