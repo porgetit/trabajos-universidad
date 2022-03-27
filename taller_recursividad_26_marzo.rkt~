@@ -1,0 +1,9 @@
+#lang racket
+(define (deUnoaN n contador)
+  (if (<= contador n)
+      (begin (display contador)
+             (deUnoaN n (+ contador 1))
+             )
+      (begin (display contador))
+      )
+  )
