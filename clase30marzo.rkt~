@@ -1,0 +1,18 @@
+#lang racket
+(define (sumar n m)
+  (if (< n m)
+      (begin (+ n (sumar (+ n 1) m)))
+      (begin n)
+      )
+  )
+
+;(sumar 1 5) ; 15
+
+(define (contar n m contador)
+  (if (<= n m)
+      (begin (contar (+ n 1) m (+ contador 1)))
+      (begin contador)
+      )
+  )
+
+;(contar 10 12 0) ;3

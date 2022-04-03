@@ -1,0 +1,12 @@
+#lang racket
+
+(define (suma a b)
+  (cond
+    ((> a b)
+     (begin
+       (suma (+ a 1) (- b 1))
+       )
+     )
+    (())
+    )
+  )
