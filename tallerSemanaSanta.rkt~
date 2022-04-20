@@ -1,0 +1,11 @@
+#lang racket
+
+(define (potencia n m)
+  (if (> m 0)
+      (begin
+        (* n (potencia n (- m 1)))
+        )
+      (begin
+        )
+      )
+  )
