@@ -1,0 +1,9 @@
+#lang racket
+
+(define (datos)
+  (display "Ingrese la longitud deseada del vector: ")
+  (define len (read))
+  (define vec1 (make-vector len))
+  (displayln "Ingrese los datos del vector: ")
+  
+  )

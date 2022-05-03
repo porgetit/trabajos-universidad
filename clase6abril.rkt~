@@ -1,0 +1,12 @@
+#lang racket
+
+(define (fib n)
+  (if (or (= n 0) (= n 1))
+      (begin
+        1
+        )
+      (begin
+        (+ (fib (- n 1) (- n 2)))
+        )
+      )
+  )
