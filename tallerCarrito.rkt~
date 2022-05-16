@@ -1,0 +1,6 @@
+#lang racket
+
+(require (lib "graphics.ss" "graphics"))
+(open-graphics)
+
+(define _main_ (open-viewport "Main" 1000 600))

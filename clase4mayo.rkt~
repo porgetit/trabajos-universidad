@@ -1,0 +1,5 @@
+#lang racket
+
+(char? #\a)
+(char? 'a)
+(char? "arepa")
