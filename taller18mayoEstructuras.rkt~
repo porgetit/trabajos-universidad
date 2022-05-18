@@ -1,0 +1,7 @@
+#lang racket
+
+(define-struct estudiante (codigo nombre edad))
+
+(define reg1 (estudiante 1004699587 "kevin" 21))
+
+reg1
